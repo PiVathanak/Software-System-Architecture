@@ -1,0 +1,13 @@
+services:
+  api:
+    build: ./foodhub-api
+    container_name: foodhub_api
+    ports:
+      - "3000:3000"
+  frontend:
+    build: ./foodhub-web
+    container_name: foodhub_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
